@@ -81,6 +81,9 @@ class Trainer:
         spacy.lang.pt.stop_words.STOP_WORDS.add('bom')
         nlp.vocab['bom'].is_stop = False
 
+        spacy.lang.pt.stop_words.STOP_WORDS.add('Bom')
+        nlp.vocab['Bom'].is_stop = False
+
         doc = nlp(text)
         result = [token.text if not token.is_stop else '' for token in doc]
         s = ' '
